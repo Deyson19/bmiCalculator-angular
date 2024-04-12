@@ -3,7 +3,12 @@
     <h2 class="text-center text-primary">BMI Calculator</h2>
     <div class="row">
       <div class="col-lg-6 col-6 text-center">
-        <div class="bg-danger" style="border-radius: 25px; cursor: pointer">
+        <div
+          class="bg-danger"
+          style="border-radius: 25px; cursor: pointer"
+          [ngClass]="{ 'text-info': generoActual == 'Masculino' }"
+          (click)="isMale(true)"
+        >
           <i class="fa-solid fa-mars fa-beat-fade fa-5x"></i>
           <p class="text-center">Masculino</p>
         </div>
@@ -11,7 +16,9 @@
       <div class="col-lg-6 col-6 text-center">
         <div
           class="bg-body-tertiary"
+          [ngClass]="{ 'text-info': generoActual == 'Femenino' }"
           style="border-radius: 25px; cursor: pointer"
+          (click)="isMale(false)"
         >
           <i class="fa-solid fa-venus fa-fade fa-5x"></i>
           <p class="text-center">Femenino</p>
